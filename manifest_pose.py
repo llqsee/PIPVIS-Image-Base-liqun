@@ -1,8 +1,8 @@
 import os
 import json
 
-base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Body-Pose-Frames"
-root = r"./Body-Pose-Frames"   # local path relative to this script
+base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Body-Pose"
+root = r"./Body-Pose"
 
 output_path = "manifest_pose.json"
 
@@ -21,19 +21,23 @@ for subset in os.listdir(root):
             continue
 
         frames = {}
+
         for fname in sorted(os.listdir(ped_dir)):
             if not fname.lower().endswith(".jpg"):
                 continue
 
-            # expected file format: frame_<frameid>_pose.jpg
+            # filename pattern: frame_5530_pose.jpg
             try:
                 frame_num = fname.split("_")[1]
             except IndexError:
-                frame_num = fname  # fallback in case of unexpected name
+                frame_num = fname
 
             frames[frame_num] = f"{base_url}/{subset}/{ped}/{fname}"
 
+        # no suffix to strip — ped folder name is the bare ped_id (e.g. 3_2_290)
         manifest[subset][ped] = {"frames": frames}
 
 with open(output_path, "w") as f:
     json.dump(manifest, f, indent=2)
+
+print(f"Body-pose manifest saved → {output_path}")

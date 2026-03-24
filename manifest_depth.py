@@ -1,13 +1,13 @@
 import os
 import json
 
-# GitHub raw base path — updated to match repo folder name
-base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base//master/Semantic-Segmentation"
+# GitHub raw base path
+base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Categorical-Depth"
 
-# Local directory — update to match local folder name
-root = r"./Semantic-Segmentation"
+# Local directory
+root = r"./Categorical-Depth"
 
-output_path = "manifest_semantic.json"
+output_path = "manifest_depth.json"
 
 manifest = {}
 
@@ -29,7 +29,7 @@ for subset in os.listdir(root):
             if not fname.lower().endswith(".jpg"):
                 continue
 
-            # filename pattern: frame_5530_sem_bbox_global.jpg
+            # filename pattern: frame_5530_depth_bbox_global.jpg
             try:
                 frame_num = fname.split("_")[1]
             except IndexError:
@@ -37,11 +37,11 @@ for subset in os.listdir(root):
 
             frames[frame_num] = f"{base_url}/{subset}/{ped}/{fname}"
 
-        # ped key stripped of _global suffix for cleaner lookup
-        ped_id = ped.replace("_global", "")
+        # ped key stripped of _depth_global suffix for consistent lookup
+        ped_id = ped.replace("_depth_global", "")
         manifest[subset][ped_id] = {"frames": frames}
 
 with open(output_path, "w") as f:
     json.dump(manifest, f, indent=2)
 
-print(f"Semantic manifest saved → {output_path}")
+print(f"Depth manifest saved → {output_path}")
