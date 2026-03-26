@@ -29,7 +29,7 @@ for subset in os.listdir(root):
             if not fname.lower().endswith(".jpg"):
                 continue
 
-            # filename pattern: frame_5531_flow_bbox_global.jpg
+            # filename pattern: frame_5531_flow_bbox_local.jpg
             try:
                 frame_num = fname.split("_")[1]
             except IndexError:
@@ -37,8 +37,8 @@ for subset in os.listdir(root):
 
             frames[frame_num] = f"{base_url}/{subset}/{ped}/{fname}"
 
-        # ped key stripped of _flow_global suffix for consistent lookup
-        ped_id = ped.replace("_flow_global", "")
+        # ped key stripped of _flow_local suffix for consistent lookup
+        ped_id = ped.replace("_flow_local", "")
         manifest[subset][ped_id] = {"frames": frames}
 
 with open(output_path, "w") as f:
