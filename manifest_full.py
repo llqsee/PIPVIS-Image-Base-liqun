@@ -3,10 +3,10 @@ import json
 
 # === CONFIGURATION ===
 # GitHub raw base path for Full-Scale images
-base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Full-Scale-Frames"
+base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Full-Scale-BBox"
 
 # Local directory where your Full-Scale frames are stored
-root = r"./Full-Scale-Frames"
+root = r"./Full-Scale-BBox"
 
 output_path = "manifest_full.json"
 
