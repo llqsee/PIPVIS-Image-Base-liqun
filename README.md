@@ -14,6 +14,10 @@ The PIPVIS dashboard is built in Observable/D3.js and uses this repository as it
 
 https://github.com/piyushmohan01/PIPVIS-Image-Base/blob/master/PIPVIS-Dashboard-Demo.mp4
 
+[Demo][https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/blob/master/PIPVIS-Dashboard-Demo.mp4
+
+]
+
 ---
 
 ## Repository Structure

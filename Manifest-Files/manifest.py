@@ -1,13 +1,10 @@
 import os
 import json
 
-# GitHub raw base path
-base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Optical-Flow"
+base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Bounding-Box"
+root = r"./Bounding-Box"
 
-# Local directory
-root = r"./Optical-Flow"
-
-output_path = "manifest_flow.json"
+output_path = "./Manifest-Files/manifest.json"
 
 manifest = {}
 
@@ -29,19 +26,18 @@ for subset in os.listdir(root):
             if not fname.lower().endswith(".jpg"):
                 continue
 
-            # filename pattern: frame_5531_flow_bbox_local.jpg
+            # filename pattern: frame_5530.jpg
             try:
-                frame_num = fname.split("_")[1]
+                frame_num = fname.split("_")[1].split(".")[0]
             except IndexError:
                 frame_num = fname
 
             frames[frame_num] = f"{base_url}/{subset}/{ped}/{fname}"
 
-        # ped key stripped of _flow_local suffix for consistent lookup
-        ped_id = ped.replace("_flow_local", "")
-        manifest[subset][ped_id] = {"frames": frames}
+        # no suffix to strip — ped folder name is the bare ped_id (e.g. 3_2_290)
+        manifest[subset][ped] = {"frames": frames}
 
 with open(output_path, "w") as f:
     json.dump(manifest, f, indent=2)
 
-print(f"Flow manifest saved → {output_path}")
+print(f"Bounding-box manifest saved → {output_path}")

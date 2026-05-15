@@ -2,12 +2,12 @@ import os
 import json
 
 # GitHub raw base path
-base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Categorical-Depth"
+base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Optical-Flow"
 
 # Local directory
-root = r"./Categorical-Depth"
+root = r"./Optical-Flow"
 
-output_path = "manifest_depth.json"
+output_path = "./Manifest-Files/manifest_flow.json"
 
 manifest = {}
 
@@ -29,7 +29,7 @@ for subset in os.listdir(root):
             if not fname.lower().endswith(".jpg"):
                 continue
 
-            # filename pattern: frame_5530_depth_bbox_local.jpg
+            # filename pattern: frame_5531_flow_bbox_local.jpg
             try:
                 frame_num = fname.split("_")[1]
             except IndexError:
@@ -37,11 +37,11 @@ for subset in os.listdir(root):
 
             frames[frame_num] = f"{base_url}/{subset}/{ped}/{fname}"
 
-        # ped key stripped of _depth_local suffix for consistent lookup
-        ped_id = ped.replace("_depth_local", "")
+        # ped key stripped of _flow_local suffix for consistent lookup
+        ped_id = ped.replace("_flow_local", "")
         manifest[subset][ped_id] = {"frames": frames}
 
 with open(output_path, "w") as f:
     json.dump(manifest, f, indent=2)
 
-print(f"Depth manifest saved → {output_path}")
+print(f"Flow manifest saved → {output_path}")

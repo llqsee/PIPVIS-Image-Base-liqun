@@ -1,0 +1,14 @@
+pandas
+matplotlib
+ipykernel
+tqdm
+seaborn
+opencv-python
+torch
+scikit-learn
+torchvision
+pyyaml
+requests
+network
+utils
+visdom

@@ -1,10 +1,10 @@
 import os
 import json
 
-base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Bounding-Box"
-root = r"./Bounding-Box"
+base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Body-Pose"
+root = r"./Body-Pose"
 
-output_path = "manifest.json"
+output_path = "./Manifest-Files/manifest_pose.json"
 
 manifest = {}
 
@@ -26,9 +26,9 @@ for subset in os.listdir(root):
             if not fname.lower().endswith(".jpg"):
                 continue
 
-            # filename pattern: frame_5530.jpg
+            # filename pattern: frame_5530_pose.jpg
             try:
-                frame_num = fname.split("_")[1].split(".")[0]
+                frame_num = fname.split("_")[1]
             except IndexError:
                 frame_num = fname
 
@@ -40,4 +40,4 @@ for subset in os.listdir(root):
 with open(output_path, "w") as f:
     json.dump(manifest, f, indent=2)
 
-print(f"Bounding-box manifest saved → {output_path}")
+print(f"Body-pose manifest saved → {output_path}")

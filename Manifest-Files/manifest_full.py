@@ -8,7 +8,7 @@ base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/ma
 # Local directory where your Full-Scale frames are stored
 root = r"./Full-Scale-BBox"
 
-output_path = "manifest_full.json"
+output_path = "./Manifest-Files/manifest_full.json"
 
 manifest = {}
 
