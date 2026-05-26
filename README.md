@@ -55,6 +55,13 @@ PIPVIS-Image-Base/
 │   ├── manifest_full.py            # Full-Scale RGB manifest generator
 │   └── manifest_full_sem.py        # Full-Scale Semantic manifest generator
 │
+├── PIE-Files/                  # PIE Data files - Get from **[Source](http://data.nvision2.eecs.yorku.ca/PIE_dataset/)**
+│   ├── annotations/                # Raw annotation data
+│   ├── annotations_attributes/     # Raw attributes annotation data
+│   ├── annotations_vehicle/        # Raw vehicle annotation data
+│   ├── PIE_clips/                  # PIE clips downloaded from source
+│   ├── data_cache/                 # Stores pkl file - pie_database.pkl
+│
 ├── Data-Prep/                  # Data preparation notebooks and dashboard datasets
 │   ├── annot-data/                 # Raw annotation data
 │   ├── obd-data/                   # On-board diagnostic (vehicle speed) data
