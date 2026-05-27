@@ -2,7 +2,8 @@ import os
 import json
 
 # GitHub raw base path
-base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Categorical-Depth"
+# base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Categorical-Depth"
+base_url = "datasets/Categorical-Depth"
 
 # Local directory
 root = r"./Categorical-Depth"

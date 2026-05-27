@@ -1,7 +1,8 @@
 import os
 import json
 
-base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Body-Pose"
+# base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Body-Pose"
+base_url = "datasets/Body-Pose"
 root = r"./Body-Pose"
 
 output_path = "./Manifest-Files/manifest_pose.json"
