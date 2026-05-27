@@ -3,5 +3,7 @@ Image-Prep/dataset/
 Image-Prep/feature/
 Image-Prep/tools/
 PIE-Files/
-Bounding-Box/
-Full-Scale-BBox/
+Bounding-Box/TN/
+Bounding-Box/TP/
+Full-Scale-BBox/TN/
+Full-Scale-BBox/TP/
