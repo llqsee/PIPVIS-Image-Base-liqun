@@ -1,7 +1,7 @@
 import os
 import json
 
-base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Bounding-Box"
+base_url = "https://raw.githubusercontent.com/llqsee/PIPVIS-Image-Base-liqun/master/Bounding-Box"
 root = r"./Bounding-Box"
 
 output_path = "./Manifest-Files/manifest.json"
