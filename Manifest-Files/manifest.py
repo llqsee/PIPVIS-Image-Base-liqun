@@ -2,7 +2,9 @@ import os
 import json
 
 # base_url = "https://raw.githubusercontent.com/llqsee/PIPVIS-Image-Base-liqun/master/Bounding-Box"
-base_url = "datasets/Bounding-Box"
+# base_url = "datasets/Bounding-Box"
+base_url = "https://huggingface.co/datasets/lqliu/pipvis/resolve/main/Bounding-Box"
+
 root = r"./Bounding-Box"
 
 output_path = "./Manifest-Files/manifest.json"

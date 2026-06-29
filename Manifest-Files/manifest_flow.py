@@ -3,7 +3,8 @@ import json
 
 # GitHub raw base path
 # base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Optical-Flow"
-base_url = "datasets/Optical-Flow"
+# base_url = "datasets/Optical-Flow"
+base_url = "https://huggingface.co/datasets/lqliu/pipvis/resolve/main/Optical-Flow"
 
 # Local directory
 root = r"./Optical-Flow"

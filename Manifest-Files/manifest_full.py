@@ -4,7 +4,8 @@ import json
 # === CONFIGURATION ===
 # GitHub raw base path for Full-Scale images
 # base_url = "https://raw.githubusercontent.com/llqsee/PIPVIS-Image-Base-liqun/master/Full-Scale-BBox"
-base_url = "datasets/Full-Scale-BBox"
+# base_url = "datasets/Full-Scale-BBox"
+base_url = "https://huggingface.co/datasets/lqliu/pipvis/resolve/main/Full-Scale-BBox"
 
 # Local directory where your Full-Scale frames are stored
 root = r"./Full-Scale-BBox"
